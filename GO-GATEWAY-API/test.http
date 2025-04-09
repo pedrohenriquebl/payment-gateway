@@ -9,7 +9,7 @@ Content-Type: application/json
 
 {
     "name": "Peaga",
-    "email": "peaga@example.com"
+    "email": "peaga2@example.com"
 }
 
 ### Get Account

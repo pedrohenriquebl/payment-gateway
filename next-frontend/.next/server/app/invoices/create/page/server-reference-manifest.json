@@ -1,0 +1,27 @@
+{
+  "node": {
+    "0074bb49439a9a8af3104559a7401ac5f08d1f4359": {
+      "workers": {
+        "app/invoices/create/page": {
+          "moduleId": "[project]/.next-internal/server/app/invoices/create/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/components/header.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/invoices/create/create-invoice-action.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/invoices/create/page": "rsc"
+      }
+    },
+    "40c7c587f9fb3029450ce296f3f5f54f9c8bf2c68d": {
+      "workers": {
+        "app/invoices/create/page": {
+          "moduleId": "[project]/.next-internal/server/app/invoices/create/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/components/header.tsx [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/app/invoices/create/create-invoice-action.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/invoices/create/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

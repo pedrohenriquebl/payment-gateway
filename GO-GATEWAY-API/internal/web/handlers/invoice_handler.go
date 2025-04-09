@@ -91,7 +91,7 @@ func (h *InvoiceHandler) ListByAccount(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	output, err := h.service.ListByAccount(apiKey)
+	output, err := h.service.ListByAPIKey(apiKey)
 	if err != nil {
 		switch err {
 		case domain.ErrAccountNotFound:
