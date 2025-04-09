@@ -21,7 +21,7 @@ func NewInvoiceHandler(service service.InvoiceServiceInterface) *InvoiceHandler 
 }
 
 // Endpoint: /invoice
-func (h *InvoiceHandler) Create(w http.ResponseWriter, r *http.Request) {
+func (h *InvoiceHandler) Save(w http.ResponseWriter, r *http.Request) {
 	var input dto.CreateInvoiceInput
 	err := json.NewDecoder(r.Body).Decode(&input)
 	if err != nil {
@@ -35,7 +35,7 @@ func (h *InvoiceHandler) Create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	output, err := h.service.Create(input)
+	output, err := h.service.Save(&input)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return

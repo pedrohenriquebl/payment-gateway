@@ -36,7 +36,7 @@ func (server *Server) ConfigureRoutes() {
 
 	server.router.Group(func(r chi.Router) {
 		r.Use(authMiddleware.Authenticate)
-		server.router.Post("/invoice", invoiceHandler.Create)
+		server.router.Post("/invoice", invoiceHandler.Save)
 		server.router.Get("/invoice/{id}", invoiceHandler.GetById)
 		server.router.Get("/invoice", invoiceHandler.ListByAccount)
 	})

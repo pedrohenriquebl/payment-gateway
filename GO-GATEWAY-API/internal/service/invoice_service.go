@@ -6,7 +6,6 @@ import (
 )
 
 type InvoiceServiceInterface interface {
-	Create(input dto.CreateInvoiceInput) (*dto.InvoiceOutput, error)
 	Save(invoice *dto.CreateInvoiceInput) (*dto.InvoiceOutput, error)
 	GetById(id, apiKey string) (*dto.InvoiceOutput, error)
 	ListByAccount(accountID string) ([]*dto.InvoiceOutput, error)
@@ -25,13 +24,13 @@ func NewInvoiceService(invoiceRepository domain.InvoiceRepository, accountServic
 	}
 }
 
-func (s *InvoiceService) Create(input dto.CreateInvoiceInput) (*dto.InvoiceOutput, error) {
+func (s *InvoiceService) Save(input *dto.CreateInvoiceInput) (*dto.InvoiceOutput, error) {
 	accountOutput, err := s.AccountService.FindByAPIKey(input.APIKey)
 	if err != nil {
 		return nil, err
 	}
 
-	invoice, err := dto.ToInvoice(input, accountOutput.ID)
+	invoice, err := dto.ToInvoice(*input, accountOutput.ID)
 	if err != nil {
 		return nil, err
 	}
