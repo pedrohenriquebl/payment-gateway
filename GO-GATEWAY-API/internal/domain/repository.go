@@ -8,6 +8,7 @@ type AccountRepository interface {
 }
 
 type InvoiceRepository interface {
+	Create(invoice *Invoice) error
 	Save(invoice *Invoice) error
 	FindByID(id string) (*Invoice, error)
 	FindByAccountID(accountID string) ([]*Invoice, error)

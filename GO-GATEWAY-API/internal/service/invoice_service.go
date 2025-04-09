@@ -5,6 +5,14 @@ import (
 	"github.com/pedrohenriquebl/gateway/internal/dto"
 )
 
+type InvoiceServiceInterface interface {
+	Create(input dto.CreateInvoiceInput) (*dto.InvoiceOutput, error)
+	Save(invoice *dto.CreateInvoiceInput) (*dto.InvoiceOutput, error)
+	GetById(id, apiKey string) (*dto.InvoiceOutput, error)
+	ListByAccount(accountID string) ([]*dto.InvoiceOutput, error)
+	ListByAPIKey(apiKey string) ([]*dto.InvoiceOutput, error)
+}
+
 type InvoiceService struct {
 	invoiceRepository domain.InvoiceRepository
 	AccountService    AccountService
