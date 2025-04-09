@@ -8,8 +8,8 @@ POST {{baseUrl}}/accounts
 Content-Type: application/json
 
 {
-    "name": "John Doe",
-    "email": "john.doe3@example.com"
+    "name": "Peaga",
+    "email": "peaga@example.com"
 }
 
 ### Get Account
