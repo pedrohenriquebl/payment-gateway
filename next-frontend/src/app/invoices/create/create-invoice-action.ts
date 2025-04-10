@@ -28,10 +28,10 @@ export async function createInvoiceAction(formData: FormData) {
       amount: parseFloat(amount as string),
       description,
       card_number: cardNumber,
-      expiry_month: parseInt(expiryMonth as string),
-      expiry_year: parseInt(expiryYear as string),
+      expire_month: parseInt(expiryMonth as string),
+      expire_year: parseInt(expiryYear as string),
       cvv,
-      cardholder_name: cardholderName,
+      card_holder_name: cardholderName,
       payment_type: "credit_card",
     }),
   });
